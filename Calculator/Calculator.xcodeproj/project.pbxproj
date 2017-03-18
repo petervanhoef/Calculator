@@ -77,9 +77,9 @@
 		C6CE278F1E7D733D004FCFC3 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				C6CE27B01E7D7391004FCFC3 /* Supporting Files */,
 				C6CE27921E7D733D004FCFC3 /* ViewController.swift */,
 				C6CE27941E7D733D004FCFC3 /* Main.storyboard */,
+				C6CE27B01E7D7391004FCFC3 /* Supporting Files */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -418,6 +418,7 @@
 				C6CE27AC1E7D733D004FCFC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6CE27AD1E7D733D004FCFC3 /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				C6CE27AF1E7D733D004FCFC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
