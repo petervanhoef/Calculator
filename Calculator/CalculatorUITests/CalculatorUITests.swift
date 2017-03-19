@@ -127,4 +127,91 @@ class CalculatorUITests: XCTestCase {
         
     }
     
+    func testTask2() {
+        let app = XCUIApplication()
+        
+        let buttonDigit1 = app.buttons["1"]
+        let buttonDigit2 = app.buttons["2"]
+        let buttonDigit3 = app.buttons["3"]
+        let buttonDigit4 = app.buttons["4"]
+        let buttonDigit5 = app.buttons["5"]
+        let buttonDigit7 = app.buttons["7"]
+        let buttonDigit9 = app.buttons["9"]
+        
+        let buttonDecimalPoint = app.buttons["."]
+        
+        let buttonAdd = app.buttons["+"]
+        let buttonSubtract = app.buttons["−"]
+        
+        let buttonEqual = app.buttons["="]
+        
+        // Allow decimal point
+        buttonDigit4.tap()
+        XCTAssert(app.staticTexts["4"].exists)
+        buttonDigit2.tap()
+        XCTAssert(app.staticTexts["42"].exists)
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["42."].exists)
+        buttonDigit3.tap()
+        XCTAssert(app.staticTexts["42.3"].exists)
+        buttonDigit9.tap()
+        XCTAssert(app.staticTexts["42.39"].exists)
+        buttonSubtract.tap()
+        XCTAssert(app.staticTexts["42.39"].exists)
+        buttonDigit7.tap()
+        XCTAssert(app.staticTexts["7"].exists)
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["7."].exists)
+        buttonDigit1.tap()
+        XCTAssert(app.staticTexts["7.1"].exists)
+        buttonDigit5.tap()
+        XCTAssert(app.staticTexts["7.15"].exists)
+        buttonEqual.tap()
+        XCTAssert(app.staticTexts["35.24"].exists)
+        
+        // And only allow 1 decimal point
+        buttonDigit4.tap()
+        XCTAssert(app.staticTexts["4"].exists)
+        buttonDigit2.tap()
+        XCTAssert(app.staticTexts["42"].exists)
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["42."].exists)
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["42."].exists)
+        buttonDigit3.tap()
+        XCTAssert(app.staticTexts["42.3"].exists)
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["42.3"].exists)
+        buttonDigit9.tap()
+        XCTAssert(app.staticTexts["42.39"].exists)
+        buttonSubtract.tap()
+        XCTAssert(app.staticTexts["42.39"].exists)
+        buttonDigit7.tap()
+        XCTAssert(app.staticTexts["7"].exists)
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["7."].exists)
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["7."].exists)
+        buttonDigit1.tap()
+        XCTAssert(app.staticTexts["7.1"].exists)
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["7.1"].exists)
+        buttonDigit5.tap()
+        XCTAssert(app.staticTexts["7.15"].exists)
+        buttonEqual.tap()
+        XCTAssert(app.staticTexts["35.24"].exists)
+        
+        // User starts off entering a new number by touching the decimal point
+        buttonDecimalPoint.tap()
+        XCTAssert(app.staticTexts["0."].exists)
+        buttonDigit2.tap()
+        XCTAssert(app.staticTexts["0.2"].exists)
+        buttonDigit7.tap()
+        XCTAssert(app.staticTexts["0.27"].exists)
+        buttonAdd.tap()
+        buttonDigit3.tap()
+        XCTAssert(app.staticTexts["3"].exists)
+        buttonEqual.tap()
+        XCTAssert(app.staticTexts["3.27"].exists)
+    }
 }
