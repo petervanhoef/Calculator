@@ -51,7 +51,7 @@ class CalculatorBrainTests: XCTestCase {
         XCTAssertEqual(testBrain.result, 13)
 
         testBrain.setOperand(3)
-        testBrain.performOperation("-")
+        testBrain.performOperation("−")
         testBrain.setOperand(10)
         testBrain.performOperation("=")
         XCTAssertEqual(testBrain.result, -7)
