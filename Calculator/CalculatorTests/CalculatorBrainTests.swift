@@ -34,11 +34,38 @@ class CalculatorBrainTests: XCTestCase {
         testBrain.performOperation("√")
         XCTAssertEqual(testBrain.result, 9)
         
+        testBrain.setOperand(129)
+        testBrain.performOperation("±")
+        XCTAssertEqual(testBrain.result, -129)
+
         testBrain.setOperand(5)
         testBrain.performOperation("×")
         testBrain.setOperand(8)
         testBrain.performOperation("=")
         XCTAssertEqual(testBrain.result, 40)
+
+        testBrain.setOperand(4)
+        testBrain.performOperation("+")
+        testBrain.setOperand(9)
+        testBrain.performOperation("=")
+        XCTAssertEqual(testBrain.result, 13)
+
+        testBrain.setOperand(3)
+        testBrain.performOperation("-")
+        testBrain.setOperand(10)
+        testBrain.performOperation("=")
+        XCTAssertEqual(testBrain.result, -7)
+
+        testBrain.setOperand(6)
+        testBrain.performOperation("÷")
+        testBrain.setOperand(2)
+        testBrain.performOperation("=")
+        XCTAssertEqual(testBrain.result, 3)
+        
+        testBrain.performOperation("π")
+        testBrain.performOperation("cos")
+        XCTAssertEqual(testBrain.result, -1)
+        
     }
     
 }
