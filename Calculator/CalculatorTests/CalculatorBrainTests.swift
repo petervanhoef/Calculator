@@ -70,11 +70,11 @@ class CalculatorBrainTests: XCTestCase {
     func testAdditionalOperationsTask3() {
         var testBrain = CalculatorBrain()
         
-        testBrain.performOperation("π")
+        testBrain.setOperand(0)
         testBrain.performOperation("sin")
         XCTAssertEqual(testBrain.result, 0)
         
-        testBrain.performOperation("π")
+        testBrain.setOperand(0)
         testBrain.performOperation("tan")
         XCTAssertEqual(testBrain.result, 0)
         

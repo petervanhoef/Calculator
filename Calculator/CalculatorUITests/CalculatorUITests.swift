@@ -218,11 +218,11 @@ class CalculatorUITests: XCTestCase {
     func testAdditionalOperationsTask3() {
         let app = XCUIApplication()
         
-        app.buttons["π"].tap()
+        app.buttons["0"].tap()
         app.buttons["sin"].tap()
         XCTAssert(app.staticTexts["0.0"].exists)
         
-        app.buttons["π"].tap()
+        app.buttons["0"].tap()
         app.buttons["tan"].tap()
         XCTAssert(app.staticTexts["0.0"].exists)
         
