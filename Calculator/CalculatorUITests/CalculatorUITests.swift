@@ -214,4 +214,26 @@ class CalculatorUITests: XCTestCase {
         buttonEqual.tap()
         XCTAssert(app.staticTexts["3.27"].exists)
     }
+    
+    func testAdditionalOperationsTask3() {
+        let app = XCUIApplication()
+        
+        app.buttons["π"].tap()
+        app.buttons["sin"].tap()
+        XCTAssert(app.staticTexts["0.0"].exists)
+        
+        app.buttons["π"].tap()
+        app.buttons["tan"].tap()
+        XCTAssert(app.staticTexts["0.0"].exists)
+        
+        app.buttons["1"].tap()
+        app.buttons["8"].tap()
+        app.buttons["x²"].tap()
+        XCTAssert(app.staticTexts["324.0"].exists)
+        
+        app.buttons["4"].tap()
+        app.buttons["x⁻¹"].tap()
+        XCTAssert(app.staticTexts["0.25"].exists)
+    }
+
 }

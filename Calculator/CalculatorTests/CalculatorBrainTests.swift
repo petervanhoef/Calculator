@@ -65,7 +65,25 @@ class CalculatorBrainTests: XCTestCase {
         testBrain.performOperation("π")
         testBrain.performOperation("cos")
         XCTAssertEqual(testBrain.result, -1)
-        
     }
     
+    func testAdditionalOperationsTask3() {
+        var testBrain = CalculatorBrain()
+        
+        testBrain.performOperation("π")
+        testBrain.performOperation("sin")
+        XCTAssertEqual(testBrain.result, 0)
+        
+        testBrain.performOperation("π")
+        testBrain.performOperation("tan")
+        XCTAssertEqual(testBrain.result, 0)
+        
+        testBrain.setOperand(18)
+        testBrain.performOperation("x²")
+        XCTAssertEqual(testBrain.result, 324)
+        
+        testBrain.setOperand(4)
+        testBrain.performOperation("x⁻¹")
+        XCTAssertEqual(testBrain.result, 0.25)
+    }
 }
