@@ -85,5 +85,9 @@ struct CalculatorBrain {
         }
     }
     
-    var resultIsPending: Bool = false
+    var resultIsPending: Bool {
+        get {
+            return pendingBinaryOperation != nil
+        }
+    }
 }
