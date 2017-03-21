@@ -99,4 +99,25 @@ class CalculatorBrainTests: XCTestCase {
         XCTAssertFalse(testBrain.resultIsPending)
         XCTAssertEqual(testBrain.result, 13)
     }
+    
+    func testHint7() {
+        var testBrain = CalculatorBrain()
+        
+        // 6 x 5 x 4 x 3 = will work
+        testBrain.setOperand(6)
+        XCTAssertFalse(testBrain.resultIsPending)
+        testBrain.performOperation("×")
+        XCTAssertTrue(testBrain.resultIsPending)
+        testBrain.setOperand(5)
+        testBrain.performOperation("×")
+        XCTAssertTrue(testBrain.resultIsPending)
+        testBrain.setOperand(4)
+        testBrain.performOperation("×")
+        XCTAssertTrue(testBrain.resultIsPending)
+        testBrain.setOperand(3)
+        testBrain.performOperation("=")
+        XCTAssertFalse(testBrain.resultIsPending)
+        XCTAssertEqual(testBrain.result, 360)
+
+    }
 }
