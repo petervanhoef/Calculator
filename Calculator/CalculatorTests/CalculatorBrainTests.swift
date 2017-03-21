@@ -86,4 +86,17 @@ class CalculatorBrainTests: XCTestCase {
         testBrain.performOperation("x⁻¹")
         XCTAssertEqual(testBrain.result, 0.25)
     }
+    
+    func testResultIsPendingTask5() {
+        var testBrain = CalculatorBrain()
+
+        testBrain.setOperand(4)
+        XCTAssertFalse(testBrain.resultIsPending)
+        testBrain.performOperation("+")
+        XCTAssertTrue(testBrain.resultIsPending)
+        testBrain.setOperand(9)
+        testBrain.performOperation("=")
+        XCTAssertFalse(testBrain.resultIsPending)
+        XCTAssertEqual(testBrain.result, 13)
+    }
 }

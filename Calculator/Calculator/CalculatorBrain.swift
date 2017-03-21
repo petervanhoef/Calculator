@@ -84,4 +84,6 @@ struct CalculatorBrain {
             return accumulator
         }
     }
+    
+    var resultIsPending: Bool = false
 }
