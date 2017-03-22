@@ -91,4 +91,6 @@ struct CalculatorBrain {
             return pendingBinaryOperation != nil
         }
     }
+    
+    var description: String = "Not implemented"
 }
