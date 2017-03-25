@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var sequence: UILabel!
     
     var userIsInTheMiddleOfTyping = false
     
