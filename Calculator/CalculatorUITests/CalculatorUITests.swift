@@ -61,7 +61,7 @@ class CalculatorUITests: XCTestCase {
         // cos(π) = -1
         buttonPi.tap()
         buttonCos.tap()
-        XCTAssert(app.staticTexts["-1.0"].exists)
+        XCTAssert(app.staticTexts["-1"].exists)
         
         // 12 × 4 = 48
         buttonDigit1.tap()
@@ -69,7 +69,7 @@ class CalculatorUITests: XCTestCase {
         buttonMultiply.tap()
         buttonDigit4.tap()
         buttonEqual.tap()
-        XCTAssert(app.staticTexts["48.0"].exists)
+        XCTAssert(app.staticTexts["48"].exists)
         
         // 568 + 78 = 646
         buttonDigit5.tap()
@@ -79,7 +79,7 @@ class CalculatorUITests: XCTestCase {
         buttonDigit7.tap()
         buttonDigit8.tap()
         buttonEqual.tap()
-        XCTAssert(app.staticTexts["646.0"].exists)
+        XCTAssert(app.staticTexts["646"].exists)
 
         // 45 ÷ 5 = 9
         buttonDigit4.tap()
@@ -87,13 +87,13 @@ class CalculatorUITests: XCTestCase {
         buttonDivide.tap()
         buttonDigit5.tap()
         buttonEqual.tap()
-        XCTAssert(app.staticTexts["9.0"].exists)
+        XCTAssert(app.staticTexts["9"].exists)
         
         // 23 ± = -23
         buttonDigit2.tap()
         buttonDigit3.tap()
         app.buttons["±"].tap()
-        XCTAssert(app.staticTexts["-23.0"].exists)
+        XCTAssert(app.staticTexts["-23"].exists)
         
         // 92736 - 123 = 92613
         buttonDigit9.tap()
@@ -106,7 +106,7 @@ class CalculatorUITests: XCTestCase {
         buttonDigit2.tap()
         buttonDigit3.tap()
         buttonEqual.tap()
-        XCTAssert(app.staticTexts["92613.0"].exists)
+        XCTAssert(app.staticTexts["92613"].exists)
         
         // 8 × 0.5 = 4
         buttonDigit8.tap()
@@ -115,15 +115,15 @@ class CalculatorUITests: XCTestCase {
         buttonDecimalPoint.tap()
         buttonDigit5.tap()
         buttonEqual.tap()
-        XCTAssert(app.staticTexts["4.0"].exists)
+        XCTAssert(app.staticTexts["4"].exists)
         
         // √(√(9)) = 3
         buttonDigit8.tap()
         buttonDigit1.tap()
         buttonSqrt.tap()
-        XCTAssert(app.staticTexts["9.0"].exists)
+        XCTAssert(app.staticTexts["9"].exists)
         buttonSqrt.tap()
-        XCTAssert(app.staticTexts["3.0"].exists)
+        XCTAssert(app.staticTexts["3"].exists)
         
     }
     
@@ -220,16 +220,16 @@ class CalculatorUITests: XCTestCase {
         
         app.buttons["0"].tap()
         app.buttons["sin"].tap()
-        XCTAssert(app.staticTexts["0.0"].exists)
+        XCTAssert(app.staticTexts["0"].exists)
         
         app.buttons["0"].tap()
         app.buttons["tan"].tap()
-        XCTAssert(app.staticTexts["0.0"].exists)
+        XCTAssert(app.staticTexts["0"].exists)
         
         app.buttons["1"].tap()
         app.buttons["8"].tap()
         app.buttons["x²"].tap()
-        XCTAssert(app.staticTexts["324.0"].exists)
+        XCTAssert(app.staticTexts["324"].exists)
         
         app.buttons["4"].tap()
         app.buttons["x⁻¹"].tap()
@@ -324,6 +324,6 @@ class CalculatorUITests: XCTestCase {
         app.buttons["π"].tap()
         app.buttons["="].tap()
         XCTAssert(app.staticTexts["4 × π ="].exists)
-        //XCTAssert(app.staticTexts["12.5663706143592"].exists)
+        XCTAssert(app.staticTexts["12.5664"].exists)
     }
 }

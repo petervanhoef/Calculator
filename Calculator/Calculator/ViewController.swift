@@ -33,7 +33,7 @@ class ViewController: UIViewController {
             return Double(display.text!)!
         }
         set {
-            display.text = String(newValue)
+            display.text = String(format: "%g", newValue)
         }
     }
     
@@ -49,6 +49,9 @@ class ViewController: UIViewController {
         }
         if let result = brain.result {
             displayValue = result
+        }
+        if let description = brain.description {
+            sequence.text = description + (brain.resultIsPending ? ( (description.characters.last != " ") ? " …" : "…") : " =")
         }
     }
 }
