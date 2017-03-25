@@ -357,4 +357,24 @@ class CalculatorUITests: XCTestCase {
         XCTAssert(app.staticTexts[" "].exists)
         XCTAssert(app.staticTexts["0"].exists)
     }
+    
+    func testMissingParenthesisBug() {
+        let app = XCUIApplication()
+        
+        app.buttons["4"].tap()
+        app.buttons["+"].tap()
+        app.buttons["5"].tap()
+        app.buttons["="].tap()
+        app.buttons["x²"].tap()
+        XCTAssert(app.staticTexts["(4 + 5)²"].exists)
+        XCTAssert(app.staticTexts["81"].exists)
+    
+        app.buttons["1"].tap()
+        app.buttons["+"].tap()
+        app.buttons["3"].tap()
+        app.buttons["="].tap()
+        app.buttons["x⁻¹"].tap()
+        XCTAssert(app.staticTexts["(1 + 3)⁻¹"].exists)
+        XCTAssert(app.staticTexts["0.25"].exists)
+    }
 }
