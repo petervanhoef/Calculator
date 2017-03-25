@@ -236,7 +236,7 @@ class CalculatorUITests: XCTestCase {
         XCTAssert(app.staticTexts["0.25"].exists)
     }
 
-    func testSequenceTask8() {
+    func testSequenceTask7() {
         let app = XCUIApplication()
 
         // a. touching 7 + would show “7 + ...” (with 7 still in the display)
@@ -325,5 +325,36 @@ class CalculatorUITests: XCTestCase {
         app.buttons["="].tap()
         XCTAssert(app.staticTexts["4 × π ="].exists)
         XCTAssert(app.staticTexts["12.5664"].exists)
+    }
+    
+    func testClearButtonTask8() {
+        let app = XCUIApplication()
+        
+        // check state
+        XCTAssert(app.staticTexts[" "].exists)
+        XCTAssert(app.staticTexts["0"].exists)
+        
+        // a. touching 7 + would show “7 + ...” (with 7 still in the display)
+        app.buttons["7"].tap()
+        app.buttons["+"].tap()
+        XCTAssert(app.staticTexts["7 + …"].exists)
+        XCTAssert(app.staticTexts["7"].exists)
+        
+        // b. 7 + 9 would show “7 + ...” (9 in the display)
+        app.buttons["9"].tap()
+        XCTAssert(app.staticTexts["7 + …"].exists)
+        XCTAssert(app.staticTexts["9"].exists)
+        
+        // c. 7 + 9 = would show “7 + 9 =” (16 in the display)
+        app.buttons["="].tap()
+        XCTAssert(app.staticTexts["7 + 9 ="].exists)
+        XCTAssert(app.staticTexts["16"].exists)
+        
+        // clear
+        app.buttons["C"].tap()
+        
+        // check state
+        XCTAssert(app.staticTexts[" "].exists)
+        XCTAssert(app.staticTexts["0"].exists)
     }
 }
