@@ -216,4 +216,26 @@ class CalculatorBrainTests: XCTestCase {
         XCTAssertFalse(testBrain.resultIsPending)
         XCTAssertTrue(abs(testBrain.result! - 12.5663706143592) < 0.0001)
     }
+    
+    func testMissingParenthesisBug() {
+        var testBrain = CalculatorBrain()
+        
+        testBrain.setOperand(4)
+        testBrain.performOperation("+")
+        testBrain.setOperand(5)
+        testBrain.performOperation("=")
+        testBrain.performOperation("x²")
+        XCTAssertEqual(testBrain.description, "(4 + 5)²")
+        XCTAssertFalse(testBrain.resultIsPending)
+        XCTAssertEqual(testBrain.result, 81)
+
+        testBrain.setOperand(1)
+        testBrain.performOperation("+")
+        testBrain.setOperand(3)
+        testBrain.performOperation("=")
+        testBrain.performOperation("x⁻¹")
+        XCTAssertEqual(testBrain.description, "(1 + 3)⁻¹")
+        XCTAssertFalse(testBrain.resultIsPending)
+        XCTAssertEqual(testBrain.result, 0.25)
+    }
 }
