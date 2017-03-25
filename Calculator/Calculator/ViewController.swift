@@ -22,11 +22,7 @@ class ViewController: UIViewController {
                 display.text = textCurrentlyInDisplay + digit
             }
         } else {
-            if digit == "." {
-                display.text = "0."
-            } else {
-                display.text = digit
-            }
+            display.text = (digit == ".") ? "0." : digit
             userIsInTheMiddleOfTyping = true
         }
     }
