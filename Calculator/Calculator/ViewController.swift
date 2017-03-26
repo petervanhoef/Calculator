@@ -60,5 +60,17 @@ class ViewController: UIViewController {
         displayValue = 0
         sequence.text = " "
     }
+    
+    @IBAction func backspace(_ sender: UIButton) {
+        if userIsInTheMiddleOfTyping {
+            var textCurrentlyInDisplay = display.text!
+            textCurrentlyInDisplay.remove(at: textCurrentlyInDisplay.index(before: textCurrentlyInDisplay.endIndex))
+            if textCurrentlyInDisplay.isEmpty {
+                userIsInTheMiddleOfTyping = false
+                textCurrentlyInDisplay = "0"
+            }
+            display.text = textCurrentlyInDisplay
+        }
+    }
 }
 
