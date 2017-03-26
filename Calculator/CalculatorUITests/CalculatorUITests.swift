@@ -377,4 +377,37 @@ class CalculatorUITests: XCTestCase {
         XCTAssert(app.staticTexts["(1 + 3)⁻¹ ="].exists)
         XCTAssert(app.staticTexts["0.25"].exists)
     }
+    
+    func testBackSpaceExtraCredit1() {
+        let app = XCUIApplication()
+        
+        XCTAssert(app.staticTexts["0"].exists)
+        app.buttons["BS"].tap()
+        XCTAssert(app.staticTexts["0"].exists)
+        app.buttons["3"].tap()
+        XCTAssert(app.staticTexts["3"].exists)
+        app.buttons["BS"].tap()
+        XCTAssert(app.staticTexts["0"].exists)
+        app.buttons["5"].tap()
+        app.buttons["3"].tap()
+        app.buttons["8"].tap()
+        app.buttons["9"].tap()
+        XCTAssert(app.staticTexts["5389"].exists)
+        app.buttons["BS"].tap()
+        XCTAssert(app.staticTexts["538"].exists)
+        app.buttons["BS"].tap()
+        XCTAssert(app.staticTexts["53"].exists)
+        app.buttons["7"].tap()
+        app.buttons["6"].tap()
+        XCTAssert(app.staticTexts["5376"].exists)
+        app.buttons["BS"].tap()
+        app.buttons["BS"].tap()
+        app.buttons["BS"].tap()
+        XCTAssert(app.staticTexts["5"].exists)
+        app.buttons["+"].tap()
+        app.buttons["3"].tap()
+        app.buttons["="].tap()
+        XCTAssert(app.staticTexts["5 + 3 ="].exists)
+        XCTAssert(app.staticTexts["8"].exists)
+    }
 }
