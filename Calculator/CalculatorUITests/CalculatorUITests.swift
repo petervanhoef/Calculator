@@ -324,7 +324,7 @@ class CalculatorUITests: XCTestCase {
         app.buttons["π"].tap()
         app.buttons["="].tap()
         XCTAssert(app.staticTexts["4 × π ="].exists)
-        XCTAssert(app.staticTexts["12.5664"].exists)
+        XCTAssert(app.staticTexts["12.566371"].exists)
     }
     
     func testClearButtonTask8() {
@@ -409,5 +409,34 @@ class CalculatorUITests: XCTestCase {
         app.buttons["="].tap()
         XCTAssert(app.staticTexts["5 + 3 ="].exists)
         XCTAssert(app.staticTexts["8"].exists)
+    }
+    
+    func testNumberFormatterExtraCredit2() {
+        let app = XCUIApplication()
+
+        app.buttons["4"].tap()
+        app.buttons["×"].tap()
+        app.buttons["π"].tap()
+        app.buttons["="].tap()
+        XCTAssert(app.staticTexts["4 × π ="].exists)
+        XCTAssert(app.staticTexts["12.566371"].exists)
+
+        app.buttons["4"].tap()
+        app.buttons["."].tap()
+        app.buttons["1"].tap()
+        app.buttons["2"].tap()
+        app.buttons["3"].tap()
+        app.buttons["4"].tap()
+        app.buttons["5"].tap()
+        app.buttons["6"].tap()
+        app.buttons["7"].tap()
+        app.buttons["8"].tap()
+        app.buttons["9"].tap()
+        app.buttons["+"].tap()
+        XCTAssert(app.staticTexts["4.123456 + …"].exists)
+        app.buttons["1"].tap()
+        app.buttons["="].tap()
+        XCTAssert(app.staticTexts["4.123456 + 1 ="].exists)
+        XCTAssert(app.staticTexts["5.123456"].exists)
     }
 }

@@ -238,4 +238,16 @@ class CalculatorBrainTests: XCTestCase {
         XCTAssertFalse(testBrain.resultIsPending)
         XCTAssertEqual(testBrain.result, 0.25)
     }
+    
+    func testNumberFormatterExtraCredit2() {
+        var testBrain = CalculatorBrain()
+        
+        testBrain.setOperand(4.123456789)
+        testBrain.performOperation("+")
+        testBrain.setOperand(1)
+        testBrain.performOperation("=")
+        XCTAssertEqual(testBrain.description, "4.123456 + 1")
+        XCTAssertFalse(testBrain.resultIsPending)
+        XCTAssertTrue(abs(testBrain.result! - 5.123456) < 0.0001)
+    }
 }

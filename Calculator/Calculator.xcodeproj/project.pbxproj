@@ -213,7 +213,7 @@
 					};
 					C6CE278C1E7D733D004FCFC3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AH8954P7MP;
+						DevelopmentTeam = 29TU8747Z4;
 						ProvisioningStyle = Automatic;
 					};
 					C6CE27A01E7D733D004FCFC3 = {
@@ -455,7 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AH8954P7MP;
+				DEVELOPMENT_TEAM = 29TU8747Z4;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = home.Calculator;
@@ -468,7 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AH8954P7MP;
+				DEVELOPMENT_TEAM = 29TU8747Z4;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = home.Calculator;
@@ -517,6 +517,7 @@
 				C6586B731E7EB8B700AE8920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6CE27881E7D733D004FCFC3 /* Build configuration list for PBXProject "Calculator" */ = {
 			isa = XCConfigurationList;
