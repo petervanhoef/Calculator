@@ -433,10 +433,10 @@ class CalculatorUITests: XCTestCase {
         app.buttons["8"].tap()
         app.buttons["9"].tap()
         app.buttons["+"].tap()
-        XCTAssert(app.staticTexts["4.123456 + …"].exists)
+        XCTAssert(app.staticTexts["4.123457 + …"].exists)
         app.buttons["1"].tap()
         app.buttons["="].tap()
-        XCTAssert(app.staticTexts["4.123456 + 1 ="].exists)
-        XCTAssert(app.staticTexts["5.123456"].exists)
+        XCTAssert(app.staticTexts["4.123457 + 1 ="].exists)
+        XCTAssert(app.staticTexts["5.123457"].exists)
     }
 }

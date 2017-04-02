@@ -33,7 +33,11 @@ class ViewController: UIViewController {
             return Double(display.text!)!
         }
         set {
-            display.text = String(format: "%g", newValue)
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            numberFormatter.usesGroupingSeparator = false
+            numberFormatter.maximumFractionDigits = Constants.numberOfDigitsAfterDecimalPoint
+            display.text = numberFormatter.string(from: NSNumber(value: newValue))
         }
     }
     

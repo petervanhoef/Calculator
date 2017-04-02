@@ -246,7 +246,7 @@ class CalculatorBrainTests: XCTestCase {
         testBrain.performOperation("+")
         testBrain.setOperand(1)
         testBrain.performOperation("=")
-        XCTAssertEqual(testBrain.description, "4.123456 + 1")
+        XCTAssertEqual(testBrain.description, "4.123457 + 1")
         XCTAssertFalse(testBrain.resultIsPending)
         XCTAssertTrue(abs(testBrain.result! - 5.123456) < 0.0001)
     }

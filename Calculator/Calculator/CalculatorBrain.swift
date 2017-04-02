@@ -90,7 +90,12 @@ struct CalculatorBrain {
     
     mutating func setOperand(_ operand: Double) {
         accumulator = operand
-        accumulatorString = String(format: "%g", operand)
+
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.usesGroupingSeparator = false
+        numberFormatter.maximumFractionDigits = Constants.numberOfDigitsAfterDecimalPoint
+        accumulatorString = numberFormatter.string(from: NSNumber(value: operand))
     }
     
     var result: Double? {
