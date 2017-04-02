@@ -439,4 +439,15 @@ class CalculatorUITests: XCTestCase {
         XCTAssert(app.staticTexts["4.123457 + 1 ="].exists)
         XCTAssert(app.staticTexts["5.123457"].exists)
     }
+    
+    func testRandExtraCredit3() {
+        let app = XCUIApplication()
+
+        app.buttons["Rand"].tap()
+        app.buttons["+"].tap()
+        app.buttons["4"].tap()
+        app.buttons["="].tap()
+        XCTAssertFalse(app.staticTexts["4 ="].exists)
+        XCTAssertFalse(app.staticTexts["4"].exists)
+    }
 }

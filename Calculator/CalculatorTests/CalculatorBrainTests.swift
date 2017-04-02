@@ -250,4 +250,19 @@ class CalculatorBrainTests: XCTestCase {
         XCTAssertFalse(testBrain.resultIsPending)
         XCTAssertTrue(abs(testBrain.result! - 5.123456) < 0.0001)
     }
+
+    func testRandExtraCredit3() {
+        var testBrain = CalculatorBrain()
+        
+        testBrain.setOperand(10)
+        testBrain.performOperation("+")
+        testBrain.performOperation("Rand")
+        testBrain.performOperation("=")
+        XCTAssertFalse(testBrain.resultIsPending)
+        if testBrain.result != nil {
+            XCTAssertTrue(abs(testBrain.result! - 10) <= 1)
+        } else {
+            XCTAssertFalse(testBrain.result == nil)
+        }
+    }
 }
