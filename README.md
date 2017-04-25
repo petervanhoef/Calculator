@@ -1,5 +1,5 @@
 # Calculator
-CS193P Winter 2017 Assignment I: Calculator
+My solutions of the required tasks and extra credits for **CS193P Winter 2017 Assignment I: Calculator**
 
 Some notes:
 * A [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) approach is followed
