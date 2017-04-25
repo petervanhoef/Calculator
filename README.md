@@ -17,3 +17,10 @@ Some notes:
 * And, finally, if you like the project, you are welcome to star this project!
 
 Environment: Xcode Version 8.2.1 (8C1002) running on macOS Sierra 10.12.4 (16E195)
+
+## Screen shots
+* Calculator in portrait mode:
+<img width="375" alt="simulator screen shot 25 apr 2017 13 47 00" src="https://cloud.githubusercontent.com/assets/24625595/25383848/1abf5eba-29be-11e7-9c08-e7af8eb3de87.png">
+
+* Calculator in landscape mode:
+<img width="667" alt="simulator screen shot 25 apr 2017 13 47 08" src="https://cloud.githubusercontent.com/assets/24625595/25383859/211c94a8-29be-11e7-8a1b-0f49f3b75d76.png">
