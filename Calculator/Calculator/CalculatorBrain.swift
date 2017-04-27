@@ -60,7 +60,6 @@ struct CalculatorBrain {
                     accumulator = nil
                     accumulatorString = nil
                 }
-                break
             case .equals:
                 performPendingBinaryOperation()
             }
